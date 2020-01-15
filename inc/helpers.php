@@ -1,5 +1,7 @@
 <?php
 
+    defined( 'ABSPATH' ) || exit;
+
     /**
      * @return string
      * Custom screen output function for checking
