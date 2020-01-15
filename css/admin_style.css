@@ -1,0 +1,15 @@
+.un-car-logo {
+    display: block;
+    width: 13%;
+    margin: 20px 0;
+}
+
+.un-car-logo img {
+    width: 100%;
+}
+
+@media(max-width: 786px) {
+    .un-car-logo {
+        width: 100%;
+    }
+}

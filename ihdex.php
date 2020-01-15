@@ -14,6 +14,10 @@
  * Author URI:  https://www.upwork.com/fl/dmitriykovalev9
  * 
  */
+    /**
+     * Constants and requires plugin
+     */
+    define( 'UN_CAR_LINK', 'https://unchainedcarrot.com/' );
 
     require_once plugin_dir_path( __FILE__ ) . 'inc/helpers.php';
 
@@ -82,6 +86,9 @@
         ?>
             <div class="wrap">
                 <h2><?php _e( 'Settings', 'un-car-plugin' ); ?></h2>
+                <a href="<?php echo UN_CAR_LINK; ?>" class="un-car-logo" target="_blank">
+                    <img src="<?php echo plugins_url( 'img/big_logo.png', __FILE__ ); ?>">
+                </a>
                 <?php settings_errors( 'un_car_options' ); ?>
                 <form action="options.php" method="post">
                     <?php settings_fields( 'un_car_group_options' ); ?>
