@@ -22,6 +22,17 @@
      */
     add_action( 'admin_menu', 'un_car_admin_menu' );
     add_action( 'admin_init', 'un_car_admin_settings' );
+    add_action( 'wp_ajax_mkm_api_ajax_more_articles', 'mkm_api_ajax_more_articles' );
+    add_action( 'admin_enqueue_scripts', 'un_car_enqueue_admin' );
+
+    /**
+     * @return void
+     * Connecting CSS and JS files (custom and WP)
+     */
+    function un_car_enqueue_admin() {
+        wp_enqueue_script( 'un-car-admin', plugins_url( 'js/admin_scripts.js', __FILE__ ) );
+        wp_enqueue_style( 'un-car-admin', plugins_url( 'css/admin_style.css', __FILE__ ) );
+    }
 
     /**
      * @return void
@@ -85,7 +96,7 @@
                                     type="password"
                                     id="un_car_api_kay"
                                     value="<?php echo $val_key; ?>"
-                                    class="regular-text"
+                                    class="regular-text un-car-text-pass"
                                     required
                                 />
                             </td>
@@ -100,7 +111,7 @@
                                     type="password"
                                     id="un_car_segment_kay"
                                     value="<?php echo $val_seg; ?>"
-                                    class="regular-text"
+                                    class="regular-text un-car-text-pass"
                                     required
                                 />
                             </td>
